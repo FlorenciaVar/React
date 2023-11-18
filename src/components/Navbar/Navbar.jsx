@@ -1,6 +1,7 @@
 import classes from './Navbar.module.css'
 import CartWidget from "../CartWidget/CartWidget"
 import { NavLink, useNavigate } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const Navbar = () => {
     const navigate = useNavigate()

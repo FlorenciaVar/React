@@ -1,5 +1,8 @@
 // import ItemCount from '../ItemCount/ItemCount'
 import { useState } from "react"
+import { useCart } from "../../context/CartContext"
+import { useNotification } from "../../notification/notificationContext"
+import { Link } from "react-router-dom"
 
 const InputCount = ({ onAdd, stock, initial= 1 }) => {
     const [count, setCount] = useState(initial)
@@ -47,8 +50,16 @@ const ItemDetail = ({ id, name, category, img, price, stock, description }) => {
 
     const ItemCount = inputType === 'button' ? ButtonCount : InputCount
 
-    const handleOnAdd = (quantity) => {
-        console.log(`se agregaron ${quantity} ${name}`)
+    const { addItem, isInCart } = useCart()
+    const { setNotification } = useNotification()
+
+    const handleOnAdd = (quantity) => {       
+        const productToAdd = {
+            id, name, price, quantity, img,
+        }
+
+        addItem(productToAdd)
+        setNotification('error', `Se agregaron ${quantity} ${name}`)
     }
 
     return (
@@ -62,7 +73,7 @@ const ItemDetail = ({ id, name, category, img, price, stock, description }) => {
                 </h2>
             </header>
             <picture>
-                <img src={img} alt={name} style={{ width: 200}}/>
+                <img src={img} alt={name} style={{ width: 300}}/>
             </picture>
             <section>
                 <p>
@@ -76,7 +87,13 @@ const ItemDetail = ({ id, name, category, img, price, stock, description }) => {
                 </p>
             </section>           
             <footer>
-                <ItemCount stock={stock} onAdd={handleOnAdd}/>
+                {
+                    isInCart(id) ? (
+                        <Link to='/cart'>Finalizar Compra</Link>
+                    ) : (
+                        <ItemCount stock={stock} onAdd={handleOnAdd}/>
+                    )
+                }
             </footer>
         </article>
     )

@@ -1,15 +1,15 @@
 const products = [
     { 
         id: '1', 
-        name: 'Blonde Ale', 
+        name: 'Guitarra Gibson Les Paul Tribute', 
         price: 2000, 
-        category: 'Clásicas', 
-        img:'https://cervezagoyeneche.com.ar/wp-content/uploads/2020/10/Cerveza-Artesanal-Goyeneche-Blonde-Ale.png', 
+        category: 'Eléctricas', 
+        img:'https://http2.mlstatic.com/D_NQ_NP_879608-MLA46364651503_062021-O.webp', 
         stock: 25, 
-        description:'Cerveza rubia de alta tomabilidad, brillante y cristalina. Se percibe el sabor dulce de la malta en perfecto equilibrio con el aroma de los lúpulos que otorgan agradables notas cítricas.'
+        description:'La guitarra Les Paul Tribute captura la vibración, la sensación y el tono de una Les Paul tradicional.'
     },
-    { id: '2', name: 'Honey', price: 2500, category: 'Aromáticas', img:'https://cervezagoyeneche.com.ar/wp-content/uploads/2020/10/Cerveza-Artesanal-Goyeneche-Honey.png',description:'Cerveza de color dorado profundo con el aporte justo de miel que se luce junto a un complejo blend de maltas. Perfectamente balanceada y de alta tomabilidad, final seco con retrogusto dulce y aromático.'},
-    { id: '3', name: 'IPA', price: 2500, category: 'Lupuladas', img:'https://cervezagoyeneche.com.ar/wp-content/uploads/2020/10/Cerveza-Artesanal-Goyeneche-IPA.png', description:'Cerveza de estilo moderno, de color dorado, con alta tomabilidad. El blend de maltas otorga el soporte justo para destacar y resaltar el aroma y los sabores del lúpulo, entre ellos se perciben notas cítricas, frutas de carozo, frutas tropicales y sutil resina.'}
+    { id: '2', name: 'Guitarra criolla clásica Gracia ', price: 2500, category: 'Criollas', img:'https://http2.mlstatic.com/D_NQ_NP_995978-MLA44546834689_012021-O.webp',description:'  '},
+    { id: '3', name: 'Guitarra Electroacustica Taylor Gte Mahogany', price: 2500, category: 'Acústicas', img:'https://http2.mlstatic.com/D_NQ_NP_2X_858013-MLA51618745787_092022-F.webp', description:'La GTe Mahogany es el último modelo que se une a la familia GT (Grand Theatre) de Taylor y ofrece una apariencia fresca con su construcción completamente de caoba y un carácter musical arraigado. Sónicamente, puede esperar un rango medio amaderado con un fuerte enfoque en la nota fundamental y un ataque equilibrado, gracias al efecto de compresión natural de la caoba, especialmente como material superior.'}
 ]
 
 export const getProducts = () => {
